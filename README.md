@@ -71,9 +71,14 @@ GoGuardian is a college-project Android app that simulates a modern ride-booking
 
 ## Admin Login
 
-The project is designed for a single demo admin account:
+The project supports a configurable demo admin account. Do NOT add any personal email to the repository.
 
-- `ayushsingh2262@gmail.com`
+To provide a local admin account for testing, add `ADMIN_EMAIL` to your `local.properties`:
+
+```properties
+ADMIN_EMAIL=you@example.com
+```
+The app reads this value at build time and embeds it in `BuildConfig.ADMIN_EMAIL`.
 
 ## GitHub Push Ready Checklist
 

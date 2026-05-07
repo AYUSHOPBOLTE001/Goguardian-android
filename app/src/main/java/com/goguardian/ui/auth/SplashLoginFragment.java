@@ -17,6 +17,7 @@ import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.fragment.app.Fragment;
 
 import com.goguardian.R;
+import com.goguardian.BuildConfig;
 import com.google.android.gms.auth.api.signin.GoogleSignIn;
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
 import com.google.android.gms.auth.api.signin.GoogleSignInClient;
@@ -42,7 +43,7 @@ import java.util.Map;
 
 public class SplashLoginFragment extends Fragment {
 
-    private static final String ADMIN_EMAIL = "ayushsingh2262@gmail.com";
+    private static final String ADMIN_EMAIL = BuildConfig.ADMIN_EMAIL;
 
     public interface OnLoginActionListener {
         void onLoginAsRider();
@@ -182,7 +183,8 @@ public class SplashLoginFragment extends Fragment {
                         FirebaseUser user = task.getResult().getUser();
                         checkUserRoleAndNavigate(user);
                     } else {
-                        showToast("Login failed: " + (task.getException() != null ? task.getException().getMessage() : "Unknown error"));
+                        showToast("Login failed: "
+                                + (task.getException() != null ? task.getException().getMessage() : "Unknown error"));
                     }
                 });
     }
@@ -193,9 +195,11 @@ public class SplashLoginFragment extends Fragment {
                     if (task.isSuccessful() && task.getResult().exists()) {
                         String role = task.getResult().getValue(String.class);
                         if ("admin".equals(role)) {
-                            if (listener != null) listener.onLoginAsAdmin();
+                            if (listener != null)
+                                listener.onLoginAsAdmin();
                         } else {
-                            if (listener != null) listener.onLoginAsRider();
+                            if (listener != null)
+                                listener.onLoginAsRider();
                         }
                     } else {
                         // No DB record yet (first login with email/password).
@@ -270,7 +274,7 @@ public class SplashLoginFragment extends Fragment {
             @Nullable String phoneOverride) {
         String rawEmail = user.getEmail() != null ? user.getEmail().trim() : "";
         String normalizedEmail = rawEmail.toLowerCase(Locale.US);
-        
+
         // Admin credentials override
         String finalName = nameOverride;
         String finalPhone = phoneOverride;
@@ -283,11 +287,11 @@ public class SplashLoginFragment extends Fragment {
         Map<String, Object> userData = new HashMap<>();
         userData.put("uid", user.getUid());
         userData.put("email", normalizedEmail);
-        
+
         String phoneValue = !TextUtils.isEmpty(finalPhone) ? finalPhone
                 : (user.getPhoneNumber() != null ? user.getPhoneNumber() : "");
         userData.put("phone", phoneValue);
-        
+
         String nameValue = !TextUtils.isEmpty(finalName) ? finalName
                 : (user.getDisplayName() != null ? user.getDisplayName() : "");
         userData.put("name", nameValue);
@@ -308,7 +312,8 @@ public class SplashLoginFragment extends Fragment {
                 }
                 userRef.updateChildren(userData).addOnCompleteListener(writeTask -> {
                     if (!writeTask.isSuccessful()) {
-                        if (isAdded()) showToast("Failed to save profile. Try again.");
+                        if (isAdded())
+                            showToast("Failed to save profile. Try again.");
                         return;
                     }
                     if (listener != null) {

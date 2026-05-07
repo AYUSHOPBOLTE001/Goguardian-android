@@ -38,32 +38,31 @@ import com.google.firebase.database.ValueEventListener;
 
 public class MainActivity extends AppCompatActivity
         implements SplashLoginFragment.OnLoginActionListener,
-                   RiderHomeFragment.OnRiderActionListener,
-                   AdminDashboardFragment.OnAdminActionListener,
-                   WelcomeFragment.OnWelcomeFinishedListener,
-                   OnboardingFragment.OnOnboardingCompleteListener,
-                   RideBookingFragment.OnBookingActionListener,
-                   RideSearchingFragment.OnSearchingActionListener,
-                   RideActiveFragment.OnActiveRideActionListener,
-                   RideArrivingFragment.OnArrivingActionListener,
-                   RideConfirmationFragment.OnConfirmationActionListener,
-                   com.goguardian.ui.rider.TripReceiptFragment.OnReceiptActionListener,
-                   com.goguardian.ui.rider.SafetyCheckFragment.OnSafetyCheckActionListener,
-                   RideRatingFragment.OnRatingActionListener,
-                   SosFragment.OnSosActionListener,
-                   ComingSoonFragment.OnServicesActionListener,
-                   com.goguardian.ui.rider.ProfileFragment.OnProfileActionListener {
+        RiderHomeFragment.OnRiderActionListener,
+        AdminDashboardFragment.OnAdminActionListener,
+        WelcomeFragment.OnWelcomeFinishedListener,
+        OnboardingFragment.OnOnboardingCompleteListener,
+        RideBookingFragment.OnBookingActionListener,
+        RideSearchingFragment.OnSearchingActionListener,
+        RideActiveFragment.OnActiveRideActionListener,
+        RideArrivingFragment.OnArrivingActionListener,
+        RideConfirmationFragment.OnConfirmationActionListener,
+        com.goguardian.ui.rider.TripReceiptFragment.OnReceiptActionListener,
+        com.goguardian.ui.rider.SafetyCheckFragment.OnSafetyCheckActionListener,
+        RideRatingFragment.OnRatingActionListener,
+        SosFragment.OnSosActionListener,
+        ComingSoonFragment.OnServicesActionListener,
+        com.goguardian.ui.rider.ProfileFragment.OnProfileActionListener {
 
-    private static final String ADMIN_EMAIL   = "ayushsingh2262@gmail.com";
-    private static final int    CANCEL_FEE    = 30;
+    private static final String ADMIN_EMAIL = BuildConfig.ADMIN_EMAIL;
+    private static final int CANCEL_FEE = 30;
 
-    private DemoSessionManager   demoSessionManager;
+    private DemoSessionManager demoSessionManager;
     private BottomNavigationView bottomNavigationView;
-    private boolean              isWelcomeShown = false;
-    private View                 offlineBanner;
-    private ConnectivityManager  connectivityManager;
+    private boolean isWelcomeShown = false;
+    private View offlineBanner;
+    private ConnectivityManager connectivityManager;
     private ConnectivityManager.NetworkCallback networkCallback;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -74,9 +73,9 @@ public class MainActivity extends AppCompatActivity
             isWelcomeShown = savedInstanceState.getBoolean("isWelcomeShown", false);
         }
 
-        demoSessionManager   = new DemoSessionManager(this);
+        demoSessionManager = new DemoSessionManager(this);
         bottomNavigationView = findViewById(R.id.bottom_navigation);
-        offlineBanner        = findViewById(R.id.offline_banner);
+        offlineBanner = findViewById(R.id.offline_banner);
         bottomNavigationView.setOnItemSelectedListener(this::onNavigationItemSelected);
         registerConnectivityCallback();
 
@@ -100,7 +99,6 @@ public class MainActivity extends AppCompatActivity
         outState.putBoolean("isWelcomeShown", isWelcomeShown);
     }
 
-
     @Override
     public void onOnboardingComplete() {
         demoSessionManager.markOnboardingShown();
@@ -114,7 +112,8 @@ public class MainActivity extends AppCompatActivity
     }
 
     private void renderCurrentState() {
-        if (!isWelcomeShown) return;
+        if (!isWelcomeShown)
+            return;
 
         if (!demoSessionManager.isLoggedIn()) {
             setNavVisibility(false);
@@ -136,9 +135,9 @@ public class MainActivity extends AppCompatActivity
         }
     }
 
-   
     private boolean onNavigationItemSelected(@NonNull MenuItem item) {
-        if (demoSessionManager.isAdmin()) return handleAdminNavigation(item.getItemId());
+        if (demoSessionManager.isAdmin())
+            return handleAdminNavigation(item.getItemId());
         return handleRiderNavigation(item.getItemId());
     }
 
@@ -185,46 +184,46 @@ public class MainActivity extends AppCompatActivity
     // ── RideBookingFragment.OnBookingActionListener ───────────────────────────
     @Override
     public void onRideBooked(String rideId, String pickup, String dropoff,
-                             String vehicleType, int fare,
-                             double pickupLat, double pickupLng,
-                             double dropoffLat, double dropoffLng) {
+            String vehicleType, int fare,
+            double pickupLat, double pickupLng,
+            double dropoffLat, double dropoffLng) {
         // Hide bottom nav — entering full-screen ride mode
         setNavVisibility(false);
         showFragment(RideSearchingFragment.newInstance(
-            rideId, pickup, dropoff, vehicleType, fare,
-            pickupLat, pickupLng, dropoffLat, dropoffLng));
+                rideId, pickup, dropoff, vehicleType, fare,
+                pickupLat, pickupLng, dropoffLat, dropoffLng));
     }
 
     // ── RideSearchingFragment.OnSearchingActionListener ───────────────────────
     @Override
     public void onDriverFound(String rideId, String pickup, String dropoff,
-                              String vehicleType, int fare,
-                              String driverName, String vehicleNumber,
-                              String vehicleModel, float driverRating,
-                              int etaMinutes,
-                              double pickupLat, double pickupLng,
-                              double dropoffLat, double dropoffLng) {
+            String vehicleType, int fare,
+            String driverName, String vehicleNumber,
+            String vehicleModel, float driverRating,
+            int etaMinutes,
+            double pickupLat, double pickupLng,
+            double dropoffLat, double dropoffLng) {
         // Show driver matched confirmation screen first
         showFragment(RideConfirmationFragment.newInstance(
-            rideId, pickup, dropoff, vehicleType, fare,
-            driverName, vehicleNumber, vehicleModel, driverRating,
-            etaMinutes, pickupLat, pickupLng, dropoffLat, dropoffLng));
+                rideId, pickup, dropoff, vehicleType, fare,
+                driverName, vehicleNumber, vehicleModel, driverRating,
+                etaMinutes, pickupLat, pickupLng, dropoffLat, dropoffLng));
     }
 
     // ── RideConfirmationFragment.OnConfirmationActionListener ─────────────────
     @Override
     public void onRideConfirmed(String rideId, String pickup, String dropoff,
-                                String vehicleType, int fare,
-                                String driverName, String vehicleNumber,
-                                String vehicleModel, float driverRating,
-                                int etaMinutes,
-                                double pickupLat, double pickupLng,
-                                double dropoffLat, double dropoffLng) {
+            String vehicleType, int fare,
+            String driverName, String vehicleNumber,
+            String vehicleModel, float driverRating,
+            int etaMinutes,
+            double pickupLat, double pickupLng,
+            double dropoffLat, double dropoffLng) {
         // Driver "arriving" phase — mock 500m approach to pickup
         showFragment(RideArrivingFragment.newInstance(
-            rideId, pickup, dropoff, vehicleType, fare,
-            driverName, vehicleNumber, vehicleModel, driverRating,
-            pickupLat, pickupLng, dropoffLat, dropoffLng));
+                rideId, pickup, dropoff, vehicleType, fare,
+                driverName, vehicleNumber, vehicleModel, driverRating,
+                pickupLat, pickupLng, dropoffLat, dropoffLng));
     }
 
     @Override
@@ -233,24 +232,24 @@ public class MainActivity extends AppCompatActivity
         refundToWallet(fare);
         exitRideMode();
         Toast.makeText(this, "Ride cancelled. Full refund of ₹" + fare + " processed.",
-            Toast.LENGTH_LONG).show();
+                Toast.LENGTH_LONG).show();
     }
 
     // ── RideArrivingFragment.OnArrivingActionListener ─────────────────────────
     @Override
     public void onDriverArrived(String rideId, String pickup, String dropoff,
-                                String vehicleType, int fare,
-                                String driverName, String vehicleNumber,
-                                String vehicleModel, float driverRating,
-                                double pickupLat, double pickupLng,
-                                double dropoffLat, double dropoffLng) {
+            String vehicleType, int fare,
+            String driverName, String vehicleNumber,
+            String vehicleModel, float driverRating,
+            double pickupLat, double pickupLng,
+            double dropoffLat, double dropoffLng) {
         // No OTP step — driver "arrives" and ride starts immediately
         showFragment(RideActiveFragment.newInstance(
-            rideId, pickup, dropoff, vehicleType, fare,
-            driverName, vehicleNumber, vehicleModel, driverRating,
-            /* etaMinutes */ Math.max(1, (int) Math.round(estimatedTripMinutes(
-                pickupLat, pickupLng, dropoffLat, dropoffLng))),
-            pickupLat, pickupLng, dropoffLat, dropoffLng));
+                rideId, pickup, dropoff, vehicleType, fare,
+                driverName, vehicleNumber, vehicleModel, driverRating,
+                /* etaMinutes */ Math.max(1, (int) Math.round(estimatedTripMinutes(
+                        pickupLat, pickupLng, dropoffLat, dropoffLng))),
+                pickupLat, pickupLng, dropoffLat, dropoffLng));
     }
 
     private double estimatedTripMinutes(double pLat, double pLng, double dLat, double dLng) {
@@ -266,7 +265,7 @@ public class MainActivity extends AppCompatActivity
         refundToWallet(fare);
         exitRideMode();
         Toast.makeText(this, "Booking cancelled. Full refund of ₹" + fare + " processed.",
-            Toast.LENGTH_LONG).show();
+                Toast.LENGTH_LONG).show();
     }
 
     // ── RideActiveFragment.OnActiveRideActionListener ─────────────────────────
@@ -274,7 +273,7 @@ public class MainActivity extends AppCompatActivity
     public void onRideCompleted(String rideId, int fare, String driverName, String vehicleModel) {
         // Receipt → Rating → Safety check → Home
         showFragment(com.goguardian.ui.rider.TripReceiptFragment.newInstance(
-            rideId, driverName, vehicleModel, fare));
+                rideId, driverName, vehicleModel, fare));
     }
 
     // ── TripReceiptFragment.OnReceiptActionListener ───────────────────────────
@@ -299,12 +298,13 @@ public class MainActivity extends AppCompatActivity
     public void onRideCancelled(String rideId, int fare) {
         // Partial refund (deduct cancellation fee)
         int refund = Math.max(fare - CANCEL_FEE, 0);
-        if (refund > 0) refundToWallet(refund);
+        if (refund > 0)
+            refundToWallet(refund);
         exitRideMode();
         Toast.makeText(this,
-            "Ride cancelled. ₹" + CANCEL_FEE + " fee charged. "
-            + (refund > 0 ? "₹" + refund + " refunded to wallet." : ""),
-            Toast.LENGTH_LONG).show();
+                "Ride cancelled. ₹" + CANCEL_FEE + " fee charged. "
+                        + (refund > 0 ? "₹" + refund + " refunded to wallet." : ""),
+                Toast.LENGTH_LONG).show();
     }
 
     // Called from RideActiveFragment SOS button (reuses same handler)
@@ -408,40 +408,46 @@ public class MainActivity extends AppCompatActivity
     /** Add {@code amount} back to the current user's wallet. */
     private void refundToWallet(int amount) {
         FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
-        if (user == null || amount <= 0) return;
+        if (user == null || amount <= 0)
+            return;
         com.google.firebase.database.DatabaseReference balRef = FirebaseDatabase.getInstance()
-            .getReference("users").child(user.getUid()).child("balance");
+                .getReference("users").child(user.getUid()).child("balance");
         balRef.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 Long current = snapshot.getValue(Long.class);
                 balRef.setValue((current != null ? current : 0) + amount);
             }
+
             @Override
-            public void onCancelled(@NonNull DatabaseError error) {}
+            public void onCancelled(@NonNull DatabaseError error) {
+            }
         });
     }
 
     private void setNavVisibility(boolean visible) {
         int vis = visible ? android.view.View.VISIBLE : android.view.View.GONE;
         android.view.View navCard = findViewById(R.id.card_bottom_nav);
-        if (navCard != null) navCard.setVisibility(vis);
-        if (bottomNavigationView != null) bottomNavigationView.setVisibility(vis);
+        if (navCard != null)
+            navCard.setVisibility(vis);
+        if (bottomNavigationView != null)
+            bottomNavigationView.setVisibility(vis);
     }
 
     private void showFragment(Fragment fragment) {
         getSupportFragmentManager()
-            .beginTransaction()
-            .setCustomAnimations(R.anim.fragment_fade_in, R.anim.fragment_fade_out)
-            .setReorderingAllowed(true)
-            .replace(R.id.fragment_container, fragment)
-            .commit();
+                .beginTransaction()
+                .setCustomAnimations(R.anim.fragment_fade_in, R.anim.fragment_fade_out)
+                .setReorderingAllowed(true)
+                .replace(R.id.fragment_container, fragment)
+                .commit();
     }
 
     // ── Connectivity ──────────────────────────────────────────────────────────
     private void registerConnectivityCallback() {
         connectivityManager = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
-        if (connectivityManager == null) return;
+        if (connectivityManager == null)
+            return;
 
         // Initial state: hide banner if currently online
         Network active = connectivityManager.getActiveNetwork();
@@ -453,16 +459,20 @@ public class MainActivity extends AppCompatActivity
                 .addCapability(NetworkCapabilities.NET_CAPABILITY_INTERNET)
                 .build();
         networkCallback = new ConnectivityManager.NetworkCallback() {
-            @Override public void onAvailable(@NonNull Network network) {
+            @Override
+            public void onAvailable(@NonNull Network network) {
                 runOnUiThread(() -> setOfflineBanner(false));
             }
-            @Override public void onLost(@NonNull Network network) {
+
+            @Override
+            public void onLost(@NonNull Network network) {
                 runOnUiThread(() -> setOfflineBanner(true));
             }
         };
         try {
             connectivityManager.registerNetworkCallback(req, networkCallback);
-        } catch (SecurityException ignored) {}
+        } catch (SecurityException ignored) {
+        }
     }
 
     private void setOfflineBanner(boolean offline) {
@@ -475,8 +485,10 @@ public class MainActivity extends AppCompatActivity
     protected void onDestroy() {
         super.onDestroy();
         if (connectivityManager != null && networkCallback != null) {
-            try { connectivityManager.unregisterNetworkCallback(networkCallback); }
-            catch (IllegalArgumentException ignored) {}
+            try {
+                connectivityManager.unregisterNetworkCallback(networkCallback);
+            } catch (IllegalArgumentException ignored) {
+            }
         }
     }
 }

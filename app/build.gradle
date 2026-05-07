@@ -4,6 +4,7 @@ plugins {
 }
 
 def mapsApiKey = ""
+def adminEmail = "admin@example.com"
 def localPropertiesFile = rootProject.file("local.properties")
 if (localPropertiesFile.exists()) {
     def localProps = new Properties()
@@ -11,6 +12,7 @@ if (localPropertiesFile.exists()) {
         localProps.load(stream)
     }
     mapsApiKey = localProps.getProperty("MAPS_API_KEY", "")
+    adminEmail = localProps.getProperty("ADMIN_EMAIL", adminEmail)
 }
 
 android {
@@ -25,6 +27,8 @@ android {
         versionName "1.0"
         manifestPlaceholders = [MAPS_API_KEY: mapsApiKey]
         resValue "string", "google_maps_key", mapsApiKey
+        // Admin email is configurable via local.properties (ADMIN_EMAIL). Default: admin@example.com
+        buildConfigField "String", "ADMIN_EMAIL", "\"${adminEmail}\""
     }
 
     buildTypes {
@@ -42,6 +46,7 @@ android {
     buildFeatures {
         viewBinding true
         dataBinding true
+        buildConfig true
     }
 }
 
