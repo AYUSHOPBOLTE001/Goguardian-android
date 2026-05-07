@@ -1,0 +1,36 @@
+# Android/Gradle
+.gradle/
+build/
+**/build/
+.cxx/
+.externalNativeBuild/
+captures/
+
+# Local machine secrets and SDK paths
+local.properties
+app/google-services.json
+
+# Android artifacts
+*.apk
+*.aab
+*.jks
+*.keystore
+*.hprof
+*.log
+
+# IDE
+.vscode/
+.idea/
+*.iml
+
+# Local assistant / workspace metadata
+.claude/
+.openclaude/
+
+# Generated docs and helper exports
+GoGuardian_Project_Report.docx
+GoGuardian_Project_Presentation.pptx
+appdetails.txt
+dbandapisetup.txt
+query.txt
+_build_report.py

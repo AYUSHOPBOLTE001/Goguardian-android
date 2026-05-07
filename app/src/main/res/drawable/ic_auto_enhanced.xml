@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="48dp"
+    android:height="48dp"
+    android:viewportWidth="48"
+    android:viewportHeight="48">
+
+    <!-- Ground shadow -->
+    <path
+        android:fillColor="#33000000"
+        android:pathData="M4,40 L44,40 L44,42 L4,42 Z" />
+
+    <!-- Roof / canopy (rounded top) -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M10,12 Q10,8 14,8 L34,8 Q38,8 38,12 L38,16 L10,16 Z" />
+
+    <!-- Roof stripe accent -->
+    <path
+        android:fillColor="#FFD600"
+        android:pathData="M10,11 L38,11 L38,13 L10,13 Z" />
+
+    <!-- Body (lower passenger compartment) -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M8,16 L40,16 L42,28 L42,38 L34,38 L32,34 L18,34 L16,38 L6,38 L6,28 Z" />
+
+    <!-- Front cabin window (driver) -->
+    <path
+        android:fillColor="#7CD7E8"
+        android:pathData="M37,18 L41,18 L42,26 L37,26 Z" />
+
+    <!-- Passenger opening (side) -->
+    <path
+        android:fillColor="#0A0E17"
+        android:pathData="M12,18 L34,18 L34,28 L12,28 Z" />
+
+    <!-- Passenger seat / interior glow -->
+    <path
+        android:fillColor="#2A2200"
+        android:pathData="M14,20 L32,20 L32,27 L14,27 Z" />
+
+    <!-- Vertical pillar between cabin and passenger area -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M34,16 L37,16 L37,28 L34,28 Z" />
+
+    <!-- Headlight -->
+    <path
+        android:fillColor="#FFEB80"
+        android:pathData="M40,30 L42,30 L42,33 L40,33 Z" />
+
+    <!-- Front (small) wheel -->
+    <path
+        android:fillColor="#0A0E17"
+        android:pathData="M37,38 m-5,0 a5,5 0 1,0 10,0 a5,5 0 1,0 -10,0 Z" />
+    <path
+        android:fillColor="#1A1F2E"
+        android:pathData="M37,38 m-3.5,0 a3.5,3.5 0 1,0 7,0 a3.5,3.5 0 1,0 -7,0 Z" />
+    <path
+        android:fillColor="#A0AEC0"
+        android:pathData="M37,38 m-1.4,0 a1.4,1.4 0 1,0 2.8,0 a1.4,1.4 0 1,0 -2.8,0 Z" />
+
+    <!-- Rear (large) wheel -->
+    <path
+        android:fillColor="#0A0E17"
+        android:pathData="M13,38 m-6,0 a6,6 0 1,0 12,0 a6,6 0 1,0 -12,0 Z" />
+    <path
+        android:fillColor="#1A1F2E"
+        android:pathData="M13,38 m-4.5,0 a4.5,4.5 0 1,0 9,0 a4.5,4.5 0 1,0 -9,0 Z" />
+    <path
+        android:fillColor="#A0AEC0"
+        android:pathData="M13,38 m-1.8,0 a1.8,1.8 0 1,0 3.6,0 a1.8,1.8 0 1,0 -3.6,0 Z" />
+
+    <!-- Antenna / mirror stick -->
+    <path
+        android:strokeColor="#FFFFFF"
+        android:strokeWidth="1.2"
+        android:strokeLineCap="round"
+        android:fillColor="#00000000"
+        android:pathData="M14,8 L14,4" />
+</vector>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/admin_dashboard"
+        android:icon="@drawable/ic_dashboard"
+        android:title="Dashboard" />
+    <item
+        android:id="@+id/admin_rides"
+        android:icon="@drawable/ic_rides_list"
+        android:title="Rides" />
+    <item
+        android:id="@+id/admin_users"
+        android:icon="@drawable/ic_group"
+        android:title="Users" />
+    <item
+        android:id="@+id/admin_claims"
+        android:icon="@drawable/ic_warning"
+        android:title="Claims" />
+    <item
+        android:id="@+id/admin_broadcast"
+        android:icon="@drawable/ic_campaign"
+        android:title="Broadcast" />
+</menu>

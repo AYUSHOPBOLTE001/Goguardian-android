@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <style name="Theme.GoGuardian" parent="Theme.Material3.DayNight.NoActionBar">
+        <!-- ── Color system ── -->
+        <item name="colorPrimary">@color/primary</item>
+        <item name="colorOnPrimary">@color/text_on_primary</item>
+        <item name="colorPrimaryContainer">@color/primary_container</item>
+        <item name="colorOnPrimaryContainer">@color/on_primary_container</item>
+        <item name="colorSecondary">@color/secondary</item>
+        <item name="colorSecondaryContainer">@color/secondary_container</item>
+        <item name="colorTertiary">@color/teal</item>
+        <item name="colorSurface">@color/surface</item>
+        <item name="android:colorBackground">@color/background</item>
+        <item name="colorSurfaceVariant">@color/surface_variant</item>
+        <item name="colorOnBackground">@color/text_primary</item>
+        <item name="colorOnSurface">@color/text_primary</item>
+        <item name="colorOnSurfaceVariant">@color/text_secondary</item>
+        <item name="colorOutline">@color/border</item>
+        <item name="colorOutlineVariant">@color/divider</item>
+        <!-- ── System bars ── -->
+        <item name="android:statusBarColor">@color/background</item>
+        <item name="android:navigationBarColor">@color/nav_background</item>
+        <item name="android:windowLightStatusBar" tools:targetApi="23">false</item>
+        <!-- ── Shape overrides ── -->
+        <item name="shapeAppearanceMediumComponent">@style/ShapeAppearance.GoGuardian.Medium</item>
+        <item name="shapeAppearanceLargeComponent">@style/ShapeAppearance.GoGuardian.Large</item>
+        <!-- ── Text field style ── -->
+        <item name="textInputStyle">@style/Widget.GoGuardian.TextInput</item>
+    </style>
+
+    <!-- ── Shape system ── -->
+    <style name="ShapeAppearance.GoGuardian.Medium" parent="ShapeAppearance.Material3.MediumComponent">
+        <item name="cornerSize">16dp</item>
+    </style>
+    <style name="ShapeAppearance.GoGuardian.Large" parent="ShapeAppearance.Material3.LargeComponent">
+        <item name="cornerSize">24dp</item>
+    </style>
+    <style name="ShapeAppearance.GoGuardian.ExtraLarge" parent="">
+        <item name="cornerSize">28dp</item>
+    </style>
+
+    <!-- ── Primary button – Neo-Brutalist Sharp ── -->
+    <style name="Widget.GoGuardian.Button" parent="Widget.Material3.Button">
+        <item name="android:paddingTop">18dp</item>
+        <item name="android:paddingBottom">18dp</item>
+        <item name="android:paddingStart">24dp</item>
+        <item name="android:paddingEnd">24dp</item>
+        <item name="cornerRadius">12dp</item>
+        <item name="android:textSize">15sp</item>
+        <item name="android:letterSpacing">0.04</item>
+        <item name="android:textAllCaps">true</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:fontFamily">sans-serif-black</item>
+        <item name="backgroundTint">@color/primary</item>
+        <item name="android:textColor">@color/text_on_primary</item>
+        <item name="elevation">0dp</item>
+    </style>
+
+    <!-- ── Outlined button – Sharp Borders ── -->
+    <style name="Widget.GoGuardian.Button.Outlined" parent="Widget.Material3.Button.OutlinedButton">
+        <item name="android:paddingTop">17dp</item>
+        <item name="android:paddingBottom">17dp</item>
+        <item name="android:paddingStart">24dp</item>
+        <item name="android:paddingEnd">24dp</item>
+        <item name="cornerRadius">12dp</item>
+        <item name="android:textSize">15sp</item>
+        <item name="android:letterSpacing">0.03</item>
+        <item name="android:textAllCaps">true</item>
+        <item name="strokeColor">@color/border_strong</item>
+        <item name="strokeWidth">2dp</item>
+        <item name="android:fontFamily">sans-serif-black</item>
+    </style>
+
+    <!-- ── Tonal button ── -->
+    <style name="Widget.GoGuardian.Button.Tonal" parent="Widget.Material3.Button.TonalButton">
+        <item name="android:paddingTop">15dp</item>
+        <item name="android:paddingBottom">15dp</item>
+        <item name="cornerRadius">16dp</item>
+        <item name="android:textSize">15sp</item>
+    </style>
+
+    <!-- ── Danger / SOS button ── -->
+    <style name="Widget.GoGuardian.Button.Danger" parent="Widget.Material3.Button">
+        <item name="android:paddingTop">16dp</item>
+        <item name="android:paddingBottom">16dp</item>
+        <item name="cornerRadius">16dp</item>
+        <item name="android:textSize">15sp</item>
+        <item name="android:letterSpacing">0.02</item>
+        <item name="android:textStyle">bold</item>
+        <item name="backgroundTint">@color/secondary</item>
+        <item name="android:textColor">@color/text_on_primary</item>
+    </style>
+
+    <!-- ── Card styles – Geometric Precision ── -->
+    <style name="Widget.GoGuardian.Card" parent="Widget.Material3.CardView.Elevated">
+        <item name="cardCornerRadius">16dp</item>
+        <item name="cardBackgroundColor">@color/surface</item>
+        <item name="strokeColor">@color/border_strong</item>
+        <item name="strokeWidth">2dp</item>
+        <item name="cardElevation">0dp</item>
+    </style>
+
+    <style name="Widget.GoGuardian.Card.Hero" parent="Widget.Material3.CardView.Elevated">
+        <item name="cardCornerRadius">28dp</item>
+        <item name="cardBackgroundColor">@color/surface_elevated</item>
+        <item name="strokeColor">@color/border</item>
+        <item name="strokeWidth">1dp</item>
+        <item name="cardElevation">0dp</item>
+    </style>
+
+    <!-- ── Text input ── -->
+    <style name="Widget.GoGuardian.TextInput" parent="Widget.Material3.TextInputLayout.OutlinedBox">
+        <item name="boxCornerRadiusTopStart">14dp</item>
+        <item name="boxCornerRadiusTopEnd">14dp</item>
+        <item name="boxCornerRadiusBottomStart">14dp</item>
+        <item name="boxCornerRadiusBottomEnd">14dp</item>
+        <item name="boxStrokeColor">@color/border</item>
+        <item name="boxStrokeWidth">1dp</item>
+        <item name="hintTextColor">@color/text_secondary</item>
+    </style>
+
+    <!-- ── Text appearances ── -->
+    <style name="TextAppearance.GoGuardian.Label" parent="TextAppearance.Material3.LabelMedium">
+        <item name="android:textColor">@color/text_muted</item>
+        <item name="android:textAllCaps">true</item>
+        <item name="android:letterSpacing">0.12</item>
+        <item name="android:textSize">11sp</item>
+        <item name="android:fontFamily">sans-serif-medium</item>
+    </style>
+
+    <style name="TextAppearance.GoGuardian.Display" parent="TextAppearance.Material3.DisplayMedium">
+        <item name="android:textColor">@color/text_primary</item>
+        <item name="android:textSize">36sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:letterSpacing">-0.02</item>
+        <item name="android:fontFamily">sans-serif-medium</item>
+    </style>
+
+    <style name="TextAppearance.GoGuardian.Headline" parent="TextAppearance.Material3.HeadlineMedium">
+        <item name="android:textColor">@color/text_primary</item>
+        <item name="android:textSize">26sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:letterSpacing">-0.01</item>
+        <item name="android:fontFamily">sans-serif-medium</item>
+    </style>
+
+    <style name="TextAppearance.GoGuardian.StatNumber" parent="TextAppearance.Material3.DisplaySmall">
+        <item name="android:textColor">@color/text_primary</item>
+        <item name="android:textSize">28sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:letterSpacing">-0.02</item>
+        <item name="android:fontFamily">sans-serif-medium</item>
+    </style>
+
+    <style name="TextAppearance.GoGuardian.Body" parent="TextAppearance.Material3.BodyMedium">
+        <item name="android:textColor">@color/text_secondary</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:lineSpacingMultiplier">1.4</item>
+    </style>
+</resources>

@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="200dp"
+    android:height="200dp"
+    android:viewportWidth="200"
+    android:viewportHeight="200">
+
+    <!-- ── Protective Shield Outer Frame (GoGuardian Branding) ── -->
+    <!-- A strong, geometric shield shape representing safety and trust -->
+    <path
+        android:pathData="M100,20 L170,45 L170,110 C170,155 130,185 100,195 C70,185 30,155 30,110 L30,45 Z"
+        android:fillColor="@color/surface_elevated"
+        android:strokeColor="@color/primary"
+        android:strokeWidth="5"/>
+
+    <!-- ── Inner Shield Layer (Depth) ── -->
+    <path
+        android:pathData="M100,35 L155,55 L155,110 C155,145 125,170 100,180 C75,170 45,145 45,110 L45,55 Z"
+        android:fillColor="@color/surface_variant"/>
+
+    <!-- ── The "G" Guardian Monogram ── -->
+    <!-- Geometric 'G' that also looks like a path/road -->
+    <path
+        android:pathData="M75,70 L135,70 L135,130 L75,130 L75,105 L115,105"
+        android:strokeColor="@color/primary"
+        android:strokeWidth="12"
+        android:strokeLineCap="square"
+        android:strokeLineJoin="miter"
+        android:fillColor="#00000000"/>
+
+    <!-- ── Guardian Eye / Status Dot ── -->
+    <!-- Represents the "Guardian" aspect - active monitoring -->
+    <path
+        android:pathData="M100,105 m-8,0 a8,8 0 1,0 16,0 a8,8 0 1,0 -16,0"
+        android:fillColor="@color/secondary"/>
+
+    <!-- ── Safety "Scan" Lines ── -->
+    <!-- Subtle lines suggesting radar or active protection -->
+    <path
+        android:pathData="M60,155 L140,155"
+        android:strokeColor="@color/success"
+        android:strokeWidth="2"
+        android:strokeAlpha="0.6"
+        android:strokeLineCap="round"/>
+
+    <path
+        android:pathData="M75,165 L125,165"
+        android:strokeColor="@color/success"
+        android:strokeWidth="1.5"
+        android:strokeAlpha="0.4"
+        android:strokeLineCap="round"/>
+
+</vector>

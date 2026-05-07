@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- ══════════════════════════════════════════════════════════════════════
+         GROKRIDE PROFESSIONAL UI/UX COLOR SYSTEM
+         Neo-Brutalist Transit Aesthetic
+         High contrast, bold, geometric precision
+    ══════════════════════════════════════════════════════════════════════ -->
+
+    <!-- ── Background System – Deep Slate Foundation ── -->
+    <color name="background">#0A0E17</color>
+    <color name="surface">#12161F</color>
+    <color name="surface_variant">#1A1F2B</color>
+    <color name="surface_elevated">#1F2530</color>
+    <color name="surface_overlay">#252B38</color>
+
+    <!-- ── Brand / Primary – Electric Cyan (High Energy) ── -->
+    <color name="primary">#00E5FF</color>
+    <color name="primary_dark">#00B8D4</color>
+    <color name="primary_light">#6EFFFF</color>
+    <color name="primary_container">#001F2A</color>
+    <color name="on_primary_container">#A0F0FF</color>
+    <color name="primary_glow">#00E5FF</color>
+
+    <!-- ── Secondary / Accent – Neon Magenta (Bold Contrast) ── -->
+    <color name="secondary">#FF006E</color>
+    <color name="secondary_dark">#D6005C</color>
+    <color name="secondary_light">#FF4D9A</color>
+    <color name="secondary_container">#2A0015</color>
+    <color name="on_secondary_container">#FFB3D1</color>
+
+    <!-- ── Semantic – Vivid Lime Success ── -->
+    <color name="success">#00FF88</color>
+    <color name="success_dark">#00CC6E</color>
+    <color name="success_container">#002A1C</color>
+    <color name="on_success_container">#80FFBB</color>
+
+    <!-- ── Semantic – Solar Yellow Warning ── -->
+    <color name="warning">#FFD600</color>
+    <color name="warning_dark">#FFAB00</color>
+    <color name="warning_container">#2A2200</color>
+    <color name="on_warning_container">#FFEB80</color>
+
+    <!-- ── Accent – Electric Purple ── -->
+    <color name="teal">#B388FF</color>
+    <color name="teal_dark">#7C4DFF</color>
+    <color name="teal_container">#1A0033</color>
+    <color name="on_teal_container">#E1BFFF</color>
+
+    <!-- ── Typography – High Contrast ── -->
+    <color name="text_primary">#FFFFFF</color>
+    <color name="text_secondary">#A0AEC0</color>
+    <color name="text_tertiary">#64748B</color>
+    <color name="text_muted">#475569</color>
+    <color name="text_on_primary">#0A0E17</color>
+    <color name="text_on_secondary">#FFFFFF</color>
+    <color name="on_primary">#0A0E17</color>
+
+    <!-- ── Structure – Sharp Divisions ── -->
+    <color name="divider">#1E2532</color>
+    <color name="border">#2D3748</color>
+    <color name="border_strong">#3D4A5C</color>
+
+    <!-- ── Navigation ── -->
+    <color name="nav_selected">#00E5FF</color>
+    <color name="nav_unselected">#64748B</color>
+    <color name="nav_background">#0A0E17</color>
+
+    <!-- ── Overlays & Effects ── -->
+    <color name="overlay_dark">#000000</color>
+    <color name="overlay_scrim">#1A000000</color>
+    <color name="glow_cyan">#4000E5FF</color>
+    <color name="glow_magenta">#40FF006E</color>
+    <color name="glow_lime">#4000FF88</color>
+
+    <!-- ── Status Colors ── -->
+    <color name="status_active">#00E5FF</color>
+    <color name="status_pending">#FFD600</color>
+    <color name="status_completed">#00FF88</color>
+    <color name="status_cancelled">#FF006E</color>
+    <color name="white">#FFFFFF</color>
+    <color name="black">#000000</color>
+</resources>

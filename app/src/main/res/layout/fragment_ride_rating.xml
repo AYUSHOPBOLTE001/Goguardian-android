@@ -1,0 +1,279 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/background"
+    android:gravity="center">
+
+    <!-- Glow backdrop -->
+    <View
+        android:layout_width="300dp"
+        android:layout_height="300dp"
+        android:background="@drawable/bg_glow_cyan"
+        android:alpha="0.18"
+        android:layout_gravity="center"
+        android:layout_marginBottom="-300dp" />
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:paddingHorizontal="28dp"
+            android:paddingTop="60dp"
+            android:paddingBottom="40dp">
+
+            <!-- Ride complete badge -->
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="84dp"
+                android:layout_height="84dp"
+                app:cardCornerRadius="42dp"
+                app:cardBackgroundColor="@color/success_container"
+                app:strokeWidth="2dp"
+                app:strokeColor="@color/success"
+                app:cardElevation="0dp"
+                android:layout_marginBottom="20dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:text="✓"
+                    android:textColor="@color/success"
+                    android:textSize="40sp"
+                    android:textStyle="bold" />
+            </com.google.android.material.card.MaterialCardView>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Ride Complete!"
+                android:textColor="@color/text_primary"
+                android:textSize="30sp"
+                android:textStyle="bold"
+                android:fontFamily="sans-serif-black"
+                android:letterSpacing="-0.01"
+                android:layout_marginBottom="8dp" />
+
+            <TextView
+                android:id="@+id/text_rating_summary"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="You arrived safely."
+                android:textColor="@color/text_secondary"
+                android:textSize="15sp"
+                android:layout_marginBottom="36dp" />
+
+            <!-- Driver card -->
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="28dp"
+                app:cardBackgroundColor="@color/surface"
+                app:cardCornerRadius="24dp"
+                app:strokeWidth="1dp"
+                app:strokeColor="@color/border_strong"
+                app:cardElevation="0dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:padding="20dp">
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:layout_width="56dp"
+                        android:layout_height="56dp"
+                        app:cardCornerRadius="28dp"
+                        app:cardBackgroundColor="@color/surface_variant"
+                        app:strokeWidth="2dp"
+                        app:strokeColor="@color/primary"
+                        app:cardElevation="0dp">
+                        <TextView
+                            android:id="@+id/text_rating_driver_initial"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:gravity="center"
+                            android:text="R"
+                            android:textColor="@color/primary"
+                            android:textSize="24sp"
+                            android:textStyle="bold" />
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:layout_marginStart="16dp"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/text_rating_driver_name"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Ravi Kumar"
+                            android:textColor="@color/text_primary"
+                            android:textSize="17sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/text_rating_vehicle"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Maruti Swift Dzire"
+                            android:textColor="@color/text_secondary"
+                            android:textSize="13sp" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:gravity="center">
+
+                        <TextView
+                            android:id="@+id/text_rating_fare"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="₹245"
+                            android:textColor="@color/text_primary"
+                            android:textSize="20sp"
+                            android:textStyle="bold"
+                            android:gravity="center" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="fare paid"
+                            android:textColor="@color/text_muted"
+                            android:textSize="11sp"
+                            android:gravity="center" />
+                    </LinearLayout>
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Rate your driver -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="HOW WAS YOUR DRIVER?"
+                android:textColor="@color/text_muted"
+                android:textSize="11sp"
+                android:letterSpacing="0.12"
+                android:layout_marginBottom="18dp" />
+
+            <!-- 5 star row -->
+            <LinearLayout
+                android:id="@+id/star_row"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginBottom="28dp">
+
+                <ImageView android:id="@+id/star_1" android:layout_width="44dp" android:layout_height="44dp"
+                    android:src="@drawable/ic_star" app:tint="@color/border_strong"
+                    android:padding="4dp" android:background="?attr/selectableItemBackgroundBorderless" />
+                <ImageView android:id="@+id/star_2" android:layout_width="44dp" android:layout_height="44dp"
+                    android:src="@drawable/ic_star" app:tint="@color/border_strong"
+                    android:padding="4dp" android:background="?attr/selectableItemBackgroundBorderless" />
+                <ImageView android:id="@+id/star_3" android:layout_width="44dp" android:layout_height="44dp"
+                    android:src="@drawable/ic_star" app:tint="@color/border_strong"
+                    android:padding="4dp" android:background="?attr/selectableItemBackgroundBorderless" />
+                <ImageView android:id="@+id/star_4" android:layout_width="44dp" android:layout_height="44dp"
+                    android:src="@drawable/ic_star" app:tint="@color/border_strong"
+                    android:padding="4dp" android:background="?attr/selectableItemBackgroundBorderless" />
+                <ImageView android:id="@+id/star_5" android:layout_width="44dp" android:layout_height="44dp"
+                    android:src="@drawable/ic_star" app:tint="@color/border_strong"
+                    android:padding="4dp" android:background="?attr/selectableItemBackgroundBorderless" />
+            </LinearLayout>
+
+            <!-- Quick tags -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="QUICK FEEDBACK"
+                android:textColor="@color/text_muted"
+                android:textSize="11sp"
+                android:letterSpacing="0.12"
+                android:layout_marginBottom="12dp" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginBottom="8dp">
+
+                <TextView android:id="@+id/tag_safe"
+                    android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:text="Safe Driver" android:textSize="13sp"
+                    android:textColor="@color/text_secondary"
+                    android:background="@drawable/bg_pill_teal"
+                    android:paddingHorizontal="14dp" android:paddingVertical="8dp"
+                    android:layout_marginEnd="10dp"
+                    android:clickable="true" android:focusable="true" />
+
+                <TextView android:id="@+id/tag_clean"
+                    android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:text="Clean Vehicle" android:textSize="13sp"
+                    android:textColor="@color/text_secondary"
+                    android:background="@drawable/bg_pill_teal"
+                    android:paddingHorizontal="14dp" android:paddingVertical="8dp"
+                    android:clickable="true" android:focusable="true" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginBottom="28dp">
+
+                <TextView android:id="@+id/tag_friendly"
+                    android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:text="Friendly" android:textSize="13sp"
+                    android:textColor="@color/text_secondary"
+                    android:background="@drawable/bg_pill_teal"
+                    android:paddingHorizontal="14dp" android:paddingVertical="8dp"
+                    android:layout_marginEnd="10dp"
+                    android:clickable="true" android:focusable="true" />
+
+                <TextView android:id="@+id/tag_ontime"
+                    android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:text="On Time" android:textSize="13sp"
+                    android:textColor="@color/text_secondary"
+                    android:background="@drawable/bg_pill_teal"
+                    android:paddingHorizontal="14dp" android:paddingVertical="8dp"
+                    android:clickable="true" android:focusable="true" />
+            </LinearLayout>
+
+            <!-- Submit -->
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/button_submit_rating"
+                style="@style/Widget.GoGuardian.Button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="SUBMIT RATING"
+                android:enabled="false"
+                android:backgroundTint="@color/border_strong" />
+
+            <TextView
+                android:id="@+id/button_skip_rating"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="Skip"
+                android:textColor="@color/text_tertiary"
+                android:textSize="14sp"
+                android:paddingHorizontal="8dp"
+                android:paddingVertical="6dp" />
+
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+</LinearLayout>

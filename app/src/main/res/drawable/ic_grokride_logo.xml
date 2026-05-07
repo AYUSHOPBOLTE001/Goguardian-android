@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="200dp"
+    android:height="200dp"
+    android:viewportWidth="200"
+    android:viewportHeight="200">
+
+    <!-- Geometric Hexagon Background (Neo-Brutalist) -->
+    <path
+        android:pathData="M100,20 L170,60 L170,140 L100,180 L30,140 L30,60 Z"
+        android:fillColor="@color/surface_elevated"
+        android:strokeColor="@color/primary"
+        android:strokeWidth="4"/>
+
+    <!-- Dynamic "G" and Road abstraction -->
+    <path
+        android:pathData="M70,75 L130,75 L130,125 L70,125 L70,105 L110,105"
+        android:strokeColor="@color/primary"
+        android:strokeWidth="10"
+        android:strokeLineCap="square"
+        android:strokeLineJoin="miter"/>
+
+    <!-- Central Hub Point -->
+    <path
+        android:pathData="M100,100 m-6,0 a6,6 0 1,0 12,0 a6,6 0 1,0 -12,0"
+        android:fillColor="@color/secondary"/>
+
+    <!-- Road Lines / Speed streaks -->
+    <path
+        android:pathData="M45,150 L85,150 M115,150 L155,150"
+        android:strokeColor="@color/text_tertiary"
+        android:strokeWidth="4"
+        android:strokeLineCap="round"/>
+
+</vector>

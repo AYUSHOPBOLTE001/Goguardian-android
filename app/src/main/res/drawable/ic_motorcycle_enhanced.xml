@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="48dp"
+    android:height="48dp"
+    android:viewportWidth="48"
+    android:viewportHeight="48">
+
+    <!-- Ground shadow -->
+    <path
+        android:fillColor="#33000000"
+        android:pathData="M4,42 L44,42 L44,44 L4,44 Z" />
+
+    <!-- Rear wheel outer -->
+    <path
+        android:fillColor="#0A0E17"
+        android:pathData="M11,36 m-9,0 a9,9 0 1,0 18,0 a9,9 0 1,0 -18,0 Z" />
+    <!-- Rear tire -->
+    <path
+        android:fillColor="#1A1F2E"
+        android:pathData="M11,36 m-7,0 a7,7 0 1,0 14,0 a7,7 0 1,0 -14,0 Z" />
+    <!-- Rear hub -->
+    <path
+        android:fillColor="#A0AEC0"
+        android:pathData="M11,36 m-2.5,0 a2.5,2.5 0 1,0 5,0 a2.5,2.5 0 1,0 -5,0 Z" />
+
+    <!-- Front wheel outer -->
+    <path
+        android:fillColor="#0A0E17"
+        android:pathData="M37,36 m-9,0 a9,9 0 1,0 18,0 a9,9 0 1,0 -18,0 Z" />
+    <!-- Front tire -->
+    <path
+        android:fillColor="#1A1F2E"
+        android:pathData="M37,36 m-7,0 a7,7 0 1,0 14,0 a7,7 0 1,0 -14,0 Z" />
+    <!-- Front hub -->
+    <path
+        android:fillColor="#A0AEC0"
+        android:pathData="M37,36 m-2.5,0 a2.5,2.5 0 1,0 5,0 a2.5,2.5 0 1,0 -5,0 Z" />
+
+    <!-- Frame / fuel tank (main body) -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M14,28 L20,20 L30,20 L34,26 L40,28 L40,32 L34,32 L30,28 L18,30 L14,32 Z" />
+
+    <!-- Seat -->
+    <path
+        android:fillColor="#1A1F2E"
+        android:pathData="M11,28 L19,28 L19,30 L11,30 Z" />
+
+    <!-- Fuel tank highlight -->
+    <path
+        android:fillColor="#7CD7E8"
+        android:pathData="M21,21 L29,21 L31,25 L21,25 Z" />
+
+    <!-- Handlebar -->
+    <path
+        android:strokeColor="#FFFFFF"
+        android:strokeWidth="2.4"
+        android:strokeLineCap="round"
+        android:fillColor="#00000000"
+        android:pathData="M37,18 L42,14 M37,18 L34,22" />
+
+    <!-- Headlight -->
+    <path
+        android:fillColor="#FFEB80"
+        android:pathData="M40,24 m-2.5,0 a2.5,2.5 0 1,0 5,0 a2.5,2.5 0 1,0 -5,0 Z" />
+
+    <!-- Exhaust pipe -->
+    <path
+        android:fillColor="#A0AEC0"
+        android:pathData="M16,32 L8,34 L8,36 L16,34 Z" />
+
+    <!-- Mirror -->
+    <path
+        android:strokeColor="#FFFFFF"
+        android:strokeWidth="1.5"
+        android:strokeLineCap="round"
+        android:fillColor="#00000000"
+        android:pathData="M40,14 L40,11" />
+</vector>

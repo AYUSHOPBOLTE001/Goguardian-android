@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="48dp"
+    android:height="48dp"
+    android:viewportWidth="48"
+    android:viewportHeight="48">
+
+    <!-- Ground shadow -->
+    <path
+        android:fillColor="#33000000"
+        android:pathData="M6,40 L42,40 L42,42 L6,42 Z" />
+
+    <!-- Car body (lower) -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M5,32 L7,23 L41,23 L43,32 L43,40 L5,40 Z" />
+
+    <!-- Roof / cabin -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M12,23 L16,13 L34,13 L40,23 Z" />
+
+    <!-- Front windshield glass -->
+    <path
+        android:fillColor="#7CD7E8"
+        android:pathData="M25,15 L33,15 L37.5,22 L25,22 Z" />
+
+    <!-- Rear windshield + door window -->
+    <path
+        android:fillColor="#7CD7E8"
+        android:pathData="M14.5,22 L18,15 L23.5,15 L23.5,22 Z" />
+
+    <!-- Headlight -->
+    <path
+        android:fillColor="#FFEB80"
+        android:pathData="M40,28 L43,28 L43,32 L40,32 Z" />
+
+    <!-- Tail light -->
+    <path
+        android:fillColor="#FF4D9A"
+        android:pathData="M5,28 L8,28 L8,32 L5,32 Z" />
+
+    <!-- Side mirror -->
+    <path
+        android:fillColor="#1A1F2E"
+        android:pathData="M40,22 L42,22 L42,24 L40,24 Z" />
+
+    <!-- Rear wheel well -->
+    <path
+        android:fillColor="#0A0E17"
+        android:pathData="M14,40 m-7,0 a7,7 0 1,0 14,0 a7,7 0 1,0 -14,0 Z" />
+    <!-- Rear tire -->
+    <path
+        android:fillColor="#1A1F2E"
+        android:pathData="M14,40 m-5.5,0 a5.5,5.5 0 1,0 11,0 a5.5,5.5 0 1,0 -11,0 Z" />
+    <!-- Rear hub -->
+    <path
+        android:fillColor="#A0AEC0"
+        android:pathData="M14,40 m-2,0 a2,2 0 1,0 4,0 a2,2 0 1,0 -4,0 Z" />
+
+    <!-- Front wheel well -->
+    <path
+        android:fillColor="#0A0E17"
+        android:pathData="M34,40 m-7,0 a7,7 0 1,0 14,0 a7,7 0 1,0 -14,0 Z" />
+    <!-- Front tire -->
+    <path
+        android:fillColor="#1A1F2E"
+        android:pathData="M34,40 m-5.5,0 a5.5,5.5 0 1,0 11,0 a5.5,5.5 0 1,0 -11,0 Z" />
+    <!-- Front hub -->
+    <path
+        android:fillColor="#A0AEC0"
+        android:pathData="M34,40 m-2,0 a2,2 0 1,0 4,0 a2,2 0 1,0 -4,0 Z" />
+
+    <!-- Body crease highlight -->
+    <path
+        android:strokeColor="#33000000"
+        android:strokeWidth="0.6"
+        android:fillColor="#00000000"
+        android:pathData="M5,32 L43,32" />
+</vector>

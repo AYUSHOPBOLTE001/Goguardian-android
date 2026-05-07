@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Magenta Glow Effect -->
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="oval">
+    <gradient
+        android:type="radial"
+        android:gradientRadius="175dp"
+        android:centerColor="@color/glow_magenta"
+        android:endColor="@android:color/transparent" />
+</shape>
