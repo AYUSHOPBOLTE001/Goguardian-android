@@ -10,6 +10,8 @@
 
 GoGuardian is a college-project Android app that simulates a modern ride-booking platform with a strong safety layer. It includes rider flows, admin flows, live map-based trip screens, SOS actions, wallet-style screens, and Firebase-backed sign-in for a polished demo experience.
 
+Note: This repository contains a student prototype developed for a Mobile Programming Lab course and used as an internal demonstration of women's-safety-focused features. It is not a production app.
+
 ## Highlights
 
 - Rider mode and admin mode in one APK
@@ -18,6 +20,19 @@ GoGuardian is a college-project Android app that simulates a modern ride-booking
 - SOS, safety badges, claims, wallet, and ride history screens
 - Material Design 3 styling with a dark, professional look
 - Demo admin account support for the project showcase
+
+## Safety Features (Women-focused)
+
+GoGuardian emphasizes rider safety with a set of features designed to protect women while travelling:
+
+- **SOS / Emergency Alert:** A prominent in-app SOS action that immediately alerts emergency contacts and flags the ride in the admin dashboard.
+- **Live Location Sharing:** Real-time trip tracking so trusted contacts can follow a trip until it completes.
+- **Verified Drivers & Safety Badges:** Visual safety badges on driver profiles and simulated vetting states in the demo to indicate trust level.
+- **Pre-ride ETA & Cancellation Fees:** Clear ETA, driver details, and cancellation rules to reduce uncertainty before and during trips.
+- **In-app Reporting & Admin Monitoring:** Easy reporting for safety issues and an admin dashboard for reviewing and acting on flagged rides.
+- **Privacy-first Design:** No personal credentials or API keys are stored in the repo; sensitive configuration is local-only.
+
+These elements target common safety concerns (unknown drivers, lack of trip visibility, slow emergency response) and are implemented in the demo as an extensible foundation for production hardening.
 
 ## Tech Stack
 
@@ -42,43 +57,48 @@ GoGuardian is a college-project Android app that simulates a modern ride-booking
 
 ## Setup
 
-1. Open the project in Android Studio.
-2. Create a `local.properties` file in the repo root if it does not exist.
-3. Add your Android SDK path and Maps key:
+Quick checklist to run the project locally (no secrets in repo):
+
+1. Install Android Studio and Android SDK (recommended SDK: API 34).
+2. Open the project in Android Studio.
+3. Create a `local.properties` in the repo root (this file is ignored by git).
+
+   Example `local.properties` (DO NOT commit):
 
    ```properties
-   sdk.dir=C:\Users\YOUR_USER\AppData\Local\Android\Sdk
-   MAPS_API_KEY=your_google_maps_api_key
+   sdk.dir=C:/Users/YOUR_USER/AppData/Local/Android/Sdk
+   MAPS_API_KEY=YOUR_GOOGLE_MAPS_API_KEY
+   ADMIN_EMAIL=you@example.com
    ```
 
-4. Add your Firebase config file at:
+4. Add your Firebase config file locally (not tracked):
 
-   ```
-   app/google-services.json
-   ```
+   - Place your `google-services.json` into the `app/` folder.
+   - This file contains Firebase project identifiers and is intentionally ignored by the repo.
 
-5. Make sure Firebase Authentication is enabled for:
-   - Email / Password
-   - Google
+5. Enable Firebase Authentication on your Firebase project (Email/Password and Google sign-in).
+6. In Android Studio: `File → Sync Project with Gradle Files` then build/run.
 
-6. Sync Gradle and run the app.
+Notes:
+- The Maps API key is injected at build time via `local.properties` (`MAPS_API_KEY`).
+- The demo admin address is read from `local.properties` as `ADMIN_EMAIL` and embedded into `BuildConfig.ADMIN_EMAIL` at build time.
 
 ## Important Security Notes
 
-- `local.properties` is ignored and must never be committed.
-- `app/google-services.json` is intentionally ignored because it contains Firebase app configuration and keys.
-- Use your own Firebase project and Maps API key before building for real use.
+- `local.properties` is ignored by git; never commit it.
+- `app/google-services.json` is ignored by git and must be provided locally for Firebase features.
+- Keep API keys and service account files out of the repository. If you need to share setup instructions, provide `local.properties.example` instead of real keys.
 
 ## Admin Login
 
 The project supports a configurable demo admin account. Do NOT add any personal email to the repository.
 
-To provide a local admin account for testing, add `ADMIN_EMAIL` to your `local.properties`:
+How it works:
 
-```properties
-ADMIN_EMAIL=you@example.com
-```
-The app reads this value at build time and embeds it in `BuildConfig.ADMIN_EMAIL`.
+- Set `ADMIN_EMAIL` in `local.properties` (example above).
+- At build time the value is embedded as `BuildConfig.ADMIN_EMAIL` and used by the app to enable admin flows.
+
+If you want to distribute the project for others to try, provide instructions for them to create their own `local.properties` and `google-services.json` for their Firebase project.
 
 ## GitHub Push Ready Checklist
 
@@ -87,6 +107,20 @@ The app reads this value at build time and embeds it in `BuildConfig.ADMIN_EMAIL
 - No Firebase or Maps secrets committed
 - Clean `.gitignore`
 - README included for setup and presentation
+
+## Development notes
+
+- If you need a local template file for others, create `local.properties.example` containing example keys and instructions, but do not include real keys.
+- The project intentionally ignores build artifacts, SDK paths, and Firebase config to avoid leaking secrets.
+
+## Contributing
+
+- Fork the repo and open a pull request for any non-trivial changes.
+- Keep secrets out of commits. If a secret is accidentally committed, contact the maintainer to coordinate a history rewrite.
+
+## License
+
+This project is provided as-is for demo/educational use. Add a license file if you plan to publish.
 
 ## Build
 
